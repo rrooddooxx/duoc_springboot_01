@@ -1,0 +1,274 @@
+[
+  {
+    "movieId": 1,
+    "title": "The Silent Echo",
+    "director": {
+      "name": "John",
+      "lastName": "Doe",
+      "country": "USA",
+      "birthDate": "1975-06-15T00:00:00Z",
+      "deathDate": null
+    },
+    "genre": "Drama",
+    "year": 2023,
+    "duration": 120,
+    "country": "USA",
+    "language": "English",
+    "rating": "PG-13"
+  },
+  {
+    "movieId": 2,
+    "title": "Lost Horizons",
+    "director": {
+      "name": "Emma",
+      "lastName": "Smith",
+      "country": "UK",
+      "birthDate": "1982-03-22T00:00:00Z",
+      "deathDate": null
+    },
+    "genre": "Adventure",
+    "year": 2024,
+    "duration": 135,
+    "country": "UK",
+    "language": "English",
+    "rating": "R"
+  },
+  {
+    "movieId": 3,
+    "title": "Whispers of the Night",
+    "director": {
+      "name": "Lucas",
+      "lastName": "Brown",
+      "country": "Canada",
+      "birthDate": "1968-11-08T00:00:00Z",
+      "deathDate": null
+    },
+    "genre": "Thriller",
+    "year": 2022,
+    "duration": 110,
+    "country": "Canada",
+    "language": "English",
+    "rating": "PG-13"
+  },
+  {
+    "movieId": 4,
+    "title": "Echoes of the Past",
+    "director": {
+      "name": "Sophia",
+      "lastName": "Johnson",
+      "country": "Australia",
+      "birthDate": "1979-09-01T00:00:00Z",
+      "deathDate": null
+    },
+    "genre": "Historical",
+    "year": 2021,
+    "duration": 140,
+    "country": "Australia",
+    "language": "English",
+    "rating": "PG"
+  },
+  {
+    "movieId": 5,
+    "title": "Quantum Leap",
+    "director": {
+      "name": "Michael",
+      "lastName": "Lee",
+      "country": "USA",
+      "birthDate": "1985-12-30T00:00:00Z",
+      "deathDate": null
+    },
+    "genre": "Science Fiction",
+    "year": 2023,
+    "duration": 125,
+    "country": "USA",
+    "language": "English",
+    "rating": "PG-13"
+  },
+  {
+    "movieId": 6,
+    "title": "Underworld Secrets",
+    "director": {
+      "name": "Olivia",
+      "lastName": "Martinez",
+      "country": "Spain",
+      "birthDate": "1990-05-14T00:00:00Z",
+      "deathDate": null
+    },
+    "genre": "Horror",
+    "year": 2024,
+    "duration": 105,
+    "country": "Spain",
+    "language": "Spanish",
+    "rating": "R"
+  },
+  {
+    "movieId": 7,
+    "title": "City Lights",
+    "director": {
+      "name": "James",
+      "lastName": "Garcia",
+      "country": "Mexico",
+      "birthDate": "1972-07-19T00:00:00Z",
+      "deathDate": null
+    },
+    "genre": "Romance",
+    "year": 2023,
+    "duration": 115,
+    "country": "Mexico",
+    "language": "Spanish",
+    "rating": "PG"
+  },
+  {
+    "movieId": 8,
+    "title": "The Secret Agent",
+    "director": {
+      "name": "Isabella",
+      "lastName": "Wilson",
+      "country": "Italy",
+      "birthDate": "1986-02-25T00:00:00Z",
+      "deathDate": null
+    },
+    "genre": "Action",
+    "year": 2024,
+    "duration": 130,
+    "country": "Italy",
+    "language": "Italian",
+    "rating": "PG-13"
+  },
+  {
+    "movieId": 9,
+    "title": "Starlight Dreams",
+    "director": {
+      "name": "Daniel",
+      "lastName": "Moore",
+      "country": "USA",
+      "birthDate": "1980-08-12T00:00:00Z",
+      "deathDate": null
+    },
+    "genre": "Fantasy",
+    "year": 2022,
+    "duration": 140,
+    "country": "USA",
+    "language": "English",
+    "rating": "PG"
+  },
+  {
+    "movieId": 10,
+    "title": "The Last Frontier",
+    "director": {
+      "name": "Ava",
+      "lastName": "Taylor",
+      "country": "France",
+      "birthDate": "1975-10-05T00:00:00Z",
+      "deathDate": null
+    },
+    "genre": "Western",
+    "year": 2023,
+    "duration": 125,
+    "country": "France",
+    "language": "French",
+    "rating": "R"
+  },
+  {
+    "movieId": 11,
+    "title": "Midnight Sun",
+    "director": {
+      "name": "Ethan",
+      "lastName": "Anderson",
+      "country": "Sweden",
+      "birthDate": "1983-04-21T00:00:00Z",
+      "deathDate": null
+    },
+    "genre": "Romantic Comedy",
+    "year": 2024,
+    "duration": 100,
+    "country": "Sweden",
+    "language": "Swedish",
+    "rating": "PG"
+  },
+  {
+    "movieId": 12,
+    "title": "Hidden Truths",
+    "director": {
+      "name": "Mia",
+      "lastName": "Thompson",
+      "country": "Germany",
+      "birthDate": "1979-01-17T00:00:00Z",
+      "deathDate": null
+    },
+    "genre": "Mystery",
+    "year": 2023,
+    "duration": 110,
+    "country": "Germany",
+    "language": "German",
+    "rating": "PG-13"
+  },
+  {
+    "movieId": 13,
+    "title": "Celestial Odyssey",
+    "director": {
+      "name": "Jacob",
+      "lastName": "White",
+      "country": "Australia",
+      "birthDate": "1987-09-09T00:00:00Z",
+      "deathDate": null
+    },
+    "genre": "Science Fiction",
+    "year": 2022,
+    "duration": 140,
+    "country": "Australia",
+    "language": "English",
+    "rating": "PG-13"
+  },
+  {
+    "movieId": 14,
+    "title": "The Dream Weaver",
+    "director": {
+      "name": "Charlotte",
+      "lastName": "Harris",
+      "country": "Canada",
+      "birthDate": "1981-12-14T00:00:00Z",
+      "deathDate": null
+    },
+    "genre": "Drama",
+    "year": 2024,
+    "duration": 120,
+    "country": "Canada",
+    "language": "English",
+    "rating": "PG"
+  },
+  {
+    "movieId": 15,
+    "title": "Edge of Reality",
+    "director": {
+      "name": "Amelia",
+      "lastName": "Clark",
+      "country": "New Zealand",
+      "birthDate": "1988-06-03T00:00:00Z",
+      "deathDate": null
+    },
+    "genre": "Thriller",
+    "year": 2023,
+    "duration": 115,
+    "country": "New Zealand",
+    "language": "English",
+    "rating": "R"
+  },
+  {
+    "movieId": 16,
+    "title": "The Final Chapter",
+    "director": {
+      "name": "Benjamin",
+      "lastName": "Lewis",
+      "country": "USA",
+      "birthDate": "1977-04-18T00:00:00Z",
+      "deathDate": null
+    },
+    "genre": "Action",
+    "year": 2022,
+    "duration": 125,
+    "country": "USA",
+    "language": "English",
+    "rating": "PG-13"
+  }
+]
