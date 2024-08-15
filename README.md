@@ -19,13 +19,15 @@ Estudiante: Sebastián Kravetz
 - Lombok
 - JDK 22
 
+---
+
 ### Endpoints:
 
 > Base Host: localhost:8080
 
-#### Obtener todas las películas
+#### I. Obtener todas las películas
 
-> Retorna el listado completo de películas ó filtra por un límite de resultados
+Retorna el listado completo de películas ó filtra por un límite de resultados
 
 `[GET] /api/v1/movies`
 
@@ -38,9 +40,11 @@ Estudiante: Sebastián Kravetz
 - Ejemplo Response `curl /api/v1/movies?limit=1`:
     - ![movies_filtered.png](src/static/movies_filtered.png)
 
-#### Obtener película por ID
+#### II. Obtener película por ID
 
 `[GET] /api/v1/movies/{id}`
+
+Retorna el primer resultado que coincide con el id solicitado
 
 - Ejemplo Response `curl api/v1/movies/16`
     - ![movie_by_id.png](src/static/movie_by_id.png)
