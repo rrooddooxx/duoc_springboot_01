@@ -47,7 +47,11 @@ Retorna el listado completo de películas ó filtra por un límite de resultados
 Retorna el primer resultado que coincide con el id solicitado
 
 - Ejemplo Response `curl api/v1/movies/16`
+    - Si el movie id es encontrado, retorna código HTTP 200
     - ![movie_by_id.png](src/static/movie_by_id.png)
+- Response response movie id no encontrada
+    - Devolverá correctamente código HTTP 404
+    - ![movies_not_found.png](src/static/movies_not_found.png)
 
 ### Mantenedor
 
