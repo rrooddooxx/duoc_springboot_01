@@ -23,7 +23,7 @@ Estudiante: Sebastián Kravetz
 
 ### Endpoints:
 
-> Base Host: localhost:8080
+> Base Host: [DIRECCION_IP]:8080/api/v1
 
 #### I. Obtener todas las películas
 
