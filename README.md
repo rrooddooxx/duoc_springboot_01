@@ -1,4 +1,4 @@
-# API REST con Spring Boot
+# Movies MS, con Spring Boot
 
 Proyecto de Asignatura
 

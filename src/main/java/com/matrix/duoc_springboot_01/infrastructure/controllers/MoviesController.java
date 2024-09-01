@@ -30,7 +30,7 @@ public class MoviesController {
   }
 
   @GetMapping("/movies/{movieId}")
-  public ResponseEntity<List<Movies>> getMovieById(@PathVariable int movieId) {
+  public ResponseEntity<List<Movies>> getMovieById(@PathVariable("movieId") int movieId) {
     List<Movies> moviesById = moviesService.getMovieById(movieId);
     return moviesById.isEmpty() ? ResponseEntity.notFound().build() : ResponseEntity.ok(moviesById);
   }
