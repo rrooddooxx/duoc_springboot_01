@@ -1,4 +1,4 @@
-# API REST con Spring Boot
+# Movies MS, con Spring Boot
 
 Proyecto de Asignatura
 
@@ -31,27 +31,33 @@ Retorna el listado completo de películas ó filtra por un límite de resultados
 
 `[GET] /api/v1/movies`
 
+```bash
+# Peticiones cURL
+curl -X GET 'localhost:8080/api/v1/movies' # listar todas las películas
+```
+
+#### I.B Filtrar por paginación por Query Params
+
 - Query Params:
     - _opcional_ limit: int
-        - ej: `/api/v1/movies?limit=5`
+    - _opcional_ offset: int
+        - ej: `/api/v1/movies?limit=5&offset=5`
 
-- Ejemplo Response `curl /api/v1/movies`:
-    - ![all_movies.png](src/static/all_movies.png)
-- Ejemplo Response `curl /api/v1/movies?limit=1`:
-    - ![movies_filtered.png](src/static/movies_filtered.png)
+```bash
+# Peticiones cURL
+curl -X GET 'localhost:8080/api/v1/movies?limit=4&offset=4' # consulta con paginación
+```
 
 #### II. Obtener película por ID
 
 `[GET] /api/v1/movies/{id}`
 
-Retorna el primer resultado que coincide con el id solicitado
+```bash
+# Peticiones cURL
+curl -X GET 'localhost:8080/api/v1/movies/4'  # consulta x id
+```
 
-- Ejemplo Response `curl api/v1/movies/16`
-    - Si el movie id es encontrado, retorna código HTTP 200
-    - ![movie_by_id.png](src/static/movie_by_id.png)
-- Response response movie id no encontrada
-    - Devolverá correctamente código HTTP 404
-    - ![movies_not_found.png](src/static/movies_not_found.png)
+Retorna el primer resultado que coincide con el id solicitado
 
 ### Mantenedor
 
