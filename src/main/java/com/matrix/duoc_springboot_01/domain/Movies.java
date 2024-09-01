@@ -11,32 +11,34 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Movies {
-    @JsonProperty("movieId")
-    @Getter
-    int movieId;
+  @JsonProperty("movieId")
+  @Getter
+  Long movieId;
 
-    @JsonProperty("title")
-    String title;
+  @JsonProperty("title")
+  private String title;
 
-    @JsonProperty("director")
-    MoviesDirector director;
+  @JsonProperty("director")
+  private MoviesDirector director;
 
-    @JsonProperty("genre")
-    String genre;
+  @JsonProperty("genre")
+  private String genre;
 
-    @JsonProperty("year")
-    int year;
+  @JsonProperty("year")
+  private int year;
 
-    @JsonProperty("duration")
-    int duration;
+  @JsonProperty("duration")
+  private int duration;
 
-    @JsonProperty("country")
-    String country;
+  @JsonProperty("country")
+  private String country;
 
-    @JsonProperty("language")
-    String language;
+  @JsonProperty("language")
+  private String language;
 
-    @JsonProperty("rating")
-    String rating;
+  @JsonProperty("rating")
+  private String rating;
 
+  @JsonProperty("synopsis")
+  private String synopsis;
 }

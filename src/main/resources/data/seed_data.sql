@@ -1,126 +1,78 @@
 -- CREACIÓN DE TABLAS
 
-CREATE TABLE MOVIES
-(
-    movie_id    NUMBER GENERATED ALWAYS AS IDENTITY NOT NULL,
-    title       VARCHAR2(255)                       NOT NULL,
-    director_id NUMBER                              NOT NULL,
-    genre       VARCHAR2(255)                       NOT NULL,
-    year        NUMBER                              NOT NULL,
-    duration    NUMBER                              NOT NULL,
-    country_id  NUMBER                              NOT NULL,
-    language_id NUMBER                              NOT NULL,
-    rating      VARCHAR(255)                        NOT NULL,
-    CONSTRAINT pk_movie_id
-        PRIMARY KEY (movie_id),
-    CONSTRAINT fk_movie_director_id
-        FOREIGN KEY (director_id)
-            REFERENCES DIRECTOR (director_id),
-    CONSTRAINT fk_movie_country_id
-        FOREIGN KEY (country_id)
-            REFERENCES COUNTRIES (country_id),
-    CONSTRAINT fk_movie_language_id
-        FOREIGN KEY (language_id)
-            REFERENCES LANGUAGES (lang_id)
-);
-
-CREATE TABLE DIRECTOR
-(
-    director_id NUMBER GENERATED ALWAYS AS IDENTITY NOT NULL,
-    first_name  VARCHAR2(255)                       NOT NULL,
-    last_name   VARCHAR2(255)                       NOT NULL,
-    country_id  NUMBER                              NOT NULL,
-    CONSTRAINT pk_director_id
-        PRIMARY KEY (director_id),
-    CONSTRAINT fk_country_id
-        FOREIGN KEY (country_id)
-            REFERENCES COUNTRIES (country_id)
-);
-
-CREATE TABLE COUNTRIES
-(
-    country_id NUMBER GENERATED ALWAYS AS IDENTITY
-        PRIMARY KEY,
-    name       VARCHAR2(255) NOT NULL
-);
-
-
-
-CREATE TABLE LANGUAGES
-(
-    lang_id NUMBER GENERATED ALWAYS AS IDENTITY
-        PRIMARY KEY,
-    name    VARCHAR2(255) NOT NULL
-);
-
+TRUNCATE TABLE COUNTRY;
+TRUNCATE TABLE LANGUAGE;
+TRUNCATE TABLE MOVIE;
+TRUNCATE TABLE DIRECTOR;
 
 -- INSERCIÓN PAÍSES
 
 INSERT INTO
-    COUNTRIES (name)
+    Country (name)
 VALUES
     ('USA');
 INSERT INTO
-    COUNTRIES (name)
+    Country (name)
 VALUES
     ('UK');
 INSERT INTO
-    COUNTRIES (name)
+    Country (name)
 VALUES
     ('Canada');
 INSERT INTO
-    COUNTRIES (name)
+    Country (name)
 VALUES
     ('Australia');
 INSERT INTO
-    COUNTRIES (name)
+    Country (name)
 VALUES
     ('Spain');
 INSERT INTO
-    COUNTRIES (name)
+    Country (name)
 VALUES
     ('Mexico');
 INSERT INTO
-    COUNTRIES (name)
+    Country (name)
 VALUES
     ('Italy');
 INSERT INTO
-    COUNTRIES (name)
+    Country (name)
 VALUES
     ('France');
 INSERT INTO
-    COUNTRIES (name)
+    Country (name)
 VALUES
     ('Sweden');
 INSERT INTO
-    COUNTRIES (name)
+    Country (name)
 VALUES
     ('Germany');
 INSERT INTO
-    COUNTRIES (name)
+    Country (name)
 VALUES
     ('New Zealand');
+COMMIT;
 
 
 -- INSERCIÓN IDIOMAS
 INSERT INTO
-    LANGUAGES (name)
+    Language (name)
 VALUES
     ('English');
 INSERT INTO
-    LANGUAGES (name)
+    Language (name)
 VALUES
     ('Spanish');
 INSERT INTO
-    LANGUAGES (name)
+    Language (name)
 VALUES
     ('Italian');
 INSERT INTO
-    LANGUAGES (name)
+    Language (name)
 VALUES
     ('Swedish');
 INSERT INTO
-    LANGUAGES (name)
+    Language (name)
 VALUES
     ('German');
 COMMIT;
@@ -136,7 +88,7 @@ SELECT
     TO_DATE('1975-06-15', 'YYYY-MM-DD'),
     NULL
 FROM
-    COUNTRIES
+    Country
 WHERE name = 'USA';
 
 INSERT INTO
@@ -148,7 +100,7 @@ SELECT
     TO_DATE('1982-03-22', 'YYYY-MM-DD'),
     NULL
 FROM
-    COUNTRIES
+    Country
 WHERE name = 'UK';
 
 INSERT INTO
@@ -160,7 +112,7 @@ SELECT
     TO_DATE('1968-11-08', 'YYYY-MM-DD'),
     NULL
 FROM
-    COUNTRIES
+    Country
 WHERE name = 'Canada';
 
 INSERT INTO
@@ -172,7 +124,7 @@ SELECT
     TO_DATE('1979-09-01', 'YYYY-MM-DD'),
     NULL
 FROM
-    COUNTRIES
+    Country
 WHERE name = 'Australia';
 
 INSERT INTO
@@ -184,7 +136,7 @@ SELECT
     TO_DATE('1985-12-30', 'YYYY-MM-DD'),
     NULL
 FROM
-    COUNTRIES
+    Country
 WHERE name = 'USA';
 
 INSERT INTO
@@ -196,7 +148,7 @@ SELECT
     TO_DATE('1990-05-14', 'YYYY-MM-DD'),
     NULL
 FROM
-    COUNTRIES
+    Country
 WHERE name = 'Spain';
 
 INSERT INTO
@@ -208,7 +160,7 @@ SELECT
     TO_DATE('1972-07-19', 'YYYY-MM-DD'),
     NULL
 FROM
-    COUNTRIES
+    Country
 WHERE name = 'Mexico';
 
 INSERT INTO
@@ -220,7 +172,7 @@ SELECT
     TO_DATE('1986-02-25', 'YYYY-MM-DD'),
     NULL
 FROM
-    COUNTRIES
+    Country
 WHERE name = 'Italy';
 
 INSERT INTO
@@ -232,7 +184,7 @@ SELECT
     TO_DATE('1980-08-12', 'YYYY-MM-DD'),
     NULL
 FROM
-    COUNTRIES
+    Country
 WHERE name = 'USA';
 
 INSERT INTO
@@ -244,7 +196,7 @@ SELECT
     TO_DATE('1975-10-05', 'YYYY-MM-DD'),
     NULL
 FROM
-    COUNTRIES
+    Country
 WHERE name = 'France';
 
 INSERT INTO
@@ -256,7 +208,7 @@ SELECT
     TO_DATE('1983-04-21', 'YYYY-MM-DD'),
     NULL
 FROM
-    COUNTRIES
+    Country
 WHERE name = 'Sweden';
 
 INSERT INTO
@@ -268,7 +220,7 @@ SELECT
     TO_DATE('1979-01-17', 'YYYY-MM-DD'),
     NULL
 FROM
-    COUNTRIES
+    Country
 WHERE name = 'Germany';
 
 INSERT INTO
@@ -280,7 +232,7 @@ SELECT
     TO_DATE('1987-09-09', 'YYYY-MM-DD'),
     NULL
 FROM
-    COUNTRIES
+    Country
 WHERE name = 'Australia';
 
 INSERT INTO
@@ -292,7 +244,7 @@ SELECT
     TO_DATE('1981-12-14', 'YYYY-MM-DD'),
     NULL
 FROM
-    COUNTRIES
+    Country
 WHERE name = 'Canada';
 
 INSERT INTO
@@ -304,7 +256,7 @@ SELECT
     TO_DATE('1988-06-03', 'YYYY-MM-DD'),
     NULL
 FROM
-    COUNTRIES
+    Country
 WHERE name = 'New Zealand';
 
 INSERT INTO
@@ -316,79 +268,248 @@ SELECT
     TO_DATE('1977-04-18', 'YYYY-MM-DD'),
     NULL
 FROM
-    COUNTRIES
+    Country
 WHERE name = 'USA';
-
+COMMIT;
 
 -- INSERCIÓN DE PELÍCULAS
 
 INSERT INTO
-    MOVIES (title, director_id, genre, year, duration, country_id, language_id, rating)
+    MOVIE (title, director_id, genre, year, duration, country_id, language_id, rating)
 VALUES
-    ('The Silent Echo', 17, 'Drama', 2023, 120, 2, 11, 'PG-13');
+    ('The Silent Echo',
+     1,
+     'Drama',
+     2023,
+     120,
+     (SELECT COUNTRY_ID FROM COUNTRY WHERE NAME = 'USA'),
+     (SELECT LANG_ID FROM LANGUAGE WHERE NAME = 'English'),
+     'PG-13');
 
 INSERT INTO
-    MOVIES (title, director_id, genre, year, duration, country_id, language_id, rating)
+    MOVIE (title, director_id, genre, year, duration, country_id, language_id, rating)
 VALUES
-    ('Lost Horizons', 18, 'Adventure', 2024, 135, 3, 11, 'R');
+    ('Lost Horizons',
+     2,
+     'Adventure',
+     2024,
+     135,
+     (SELECT COUNTRY_ID FROM COUNTRY WHERE NAME = 'UK'),
+     (SELECT LANG_ID FROM LANGUAGE WHERE NAME = 'English'),
+     'R');
 
 INSERT INTO
-    MOVIES (title, director_id, genre, year, duration, country_id, language_id, rating)
+    MOVIE (title, director_id, genre, year, duration, country_id, language_id, rating)
 VALUES
-    ('Whispers of the Night', 19, 'Thriller', 2022, 110, 4, 11, 'PG-13');
+    ('Whispers of the Night',
+     3,
+     'Thriller',
+     2022,
+     110,
+     (SELECT COUNTRY_ID FROM COUNTRY WHERE NAME = 'New Zealand'),
+     (SELECT LANG_ID FROM LANGUAGE WHERE NAME = 'English'),
+     'PG-13');
 
 INSERT INTO
-    MOVIES (title, director_id, genre, year, duration, country_id, language_id, rating)
+    MOVIE (title, director_id, genre, year, duration, country_id, language_id, rating)
 VALUES
-    ('Echoes of the Past', 20, 'Historical', 2021, 140, 5, 11, 'PG');
+    ('Echoes of the Past',
+     4,
+     'Historical',
+     2021,
+     140,
+     (SELECT COUNTRY_ID FROM COUNTRY WHERE NAME = 'Mexico'),
+     (SELECT LANG_ID FROM LANGUAGE WHERE NAME = 'Spanish'),
+     'PG');
 
 INSERT INTO
-    MOVIES (title, director_id, genre, year, duration, country_id, language_id, rating)
+    MOVIE (title, director_id, genre, year, duration, country_id, language_id, rating)
 VALUES
-    ('Quantum Leap', 21, 'Science Fiction', 2023, 125, 2, 11, 'PG-13');
+    ('Quantum Leap',
+     5,
+     'Science Fiction',
+     2023,
+     125,
+     (SELECT COUNTRY_ID FROM COUNTRY WHERE NAME = 'Italy'),
+     (SELECT LANG_ID FROM LANGUAGE WHERE NAME = 'Italian'),
+     'PG-13');
 
 INSERT INTO
-    MOVIES (title, director_id, genre, year, duration, country_id, language_id, rating)
+    MOVIE (title, director_id, genre, year, duration, country_id, language_id, rating)
 VALUES
-    ('Underworld Secrets', 22, 'Horror', 2024, 105, 6, 12, 'R');
+    ('Underworld Secrets',
+     6,
+     'Horror',
+     2024,
+     105,
+     (SELECT COUNTRY_ID FROM COUNTRY WHERE NAME = 'Spain'),
+     (SELECT LANG_ID FROM LANGUAGE WHERE NAME = 'Spanish'),
+     'R');
 
 INSERT INTO
-    MOVIES (title, director_id, genre, year, duration, country_id, language_id, rating)
+    MOVIE (title, director_id, genre, year, duration, country_id, language_id, rating)
 VALUES
-    ('City Lights', 23, 'Romance', 2023, 115, 7, 12, 'PG');
+    ('City Lights',
+     7,
+     'Romance',
+     2023,
+     115,
+     (SELECT COUNTRY_ID FROM COUNTRY WHERE NAME = 'Mexico'),
+     (SELECT LANG_ID FROM LANGUAGE WHERE NAME = 'Spanish'),
+     'PG');
 
 INSERT INTO
-    MOVIES (title, director_id, genre, year, duration, country_id, language_id, rating)
+    MOVIE (title, director_id, genre, year, duration, country_id, language_id, rating)
 VALUES
-    ('The Secret Agent', 24, 'Action', 2024, 130, 8, 13, 'PG-13');
+    ('The Secret Agent',
+     8,
+     'Action',
+     2024,
+     130,
+     (SELECT COUNTRY_ID FROM COUNTRY WHERE NAME = 'Italy'),
+     (SELECT LANG_ID FROM LANGUAGE WHERE NAME = 'Italian'),
+     'PG-13');
 
 INSERT INTO
-    MOVIES (title, director_id, genre, year, duration, country_id, language_id, rating)
+    MOVIE (title, director_id, genre, year, duration, country_id, language_id, rating)
 VALUES
-    ('Starlight Dreams', 25, 'Fantasy', 2022, 140, 2, 11, 'PG');
+    ('Starlight Dreams',
+     9,
+     'Fantasy',
+     2022,
+     140,
+     (SELECT COUNTRY_ID FROM COUNTRY WHERE NAME = 'Sweden'),
+     (SELECT LANG_ID FROM LANGUAGE WHERE NAME = 'Swedish'),
+     'PG');
 
 INSERT INTO
-    MOVIES (title, director_id, genre, year, duration, country_id, language_id, rating)
+    MOVIE (title, director_id, genre, year, duration, country_id, language_id, rating)
 VALUES
-    ('The Last Frontier', 26, 'Western', 2023, 125, 9, 16, 'R');
+    ('The Last Frontier',
+     10,
+     'Western',
+     2023,
+     125,
+     (SELECT COUNTRY_ID FROM COUNTRY WHERE NAME = 'Germany'),
+     (SELECT LANG_ID FROM LANGUAGE WHERE NAME = 'German'),
+     'R');
 
 INSERT INTO
-    MOVIES (title, director_id, genre, year, duration, country_id, language_id, rating)
+    MOVIE (title, director_id, genre, year, duration, country_id, language_id, rating)
 VALUES
-    ('Midnight Sun', 27, 'Romantic Comedy', 2024, 100, 10, 14, 'PG');
+    ('Midnight Sun',
+     11,
+     'Romantic Comedy',
+     2024,
+     100,
+     (SELECT COUNTRY_ID FROM COUNTRY WHERE NAME = 'France'),
+     (SELECT LANG_ID FROM LANGUAGE WHERE NAME = 'French'),
+     'PG');
 
 INSERT INTO
-    MOVIES (title, director_id, genre, year, duration, country_id, language_id, rating)
+    MOVIE (title, director_id, genre, year, duration, country_id, language_id, rating)
 VALUES
-    ('Hidden Truths', 28, 'Mystery', 2023, 110, 11, 15, 'PG-13');
+    ('Hidden Truths',
+     12,
+     'Mystery',
+     2023,
+     110,
+     (SELECT COUNTRY_ID FROM COUNTRY WHERE NAME = 'UK'),
+     (SELECT LANG_ID FROM LANGUAGE WHERE NAME = 'English'),
+     'PG-13');
 
 INSERT INTO
-    MOVIES (title, director_id, genre, year, duration, country_id, language_id, rating)
+    MOVIE (title, director_id, genre, year, duration, country_id, language_id, rating)
 VALUES
-    ('Celestial Odyssey', 29, 'Science Fiction', 2022, 140, 5, 11, 'PG-13');
+    ('Celestial Odyssey',
+     13,
+     'Science Fiction',
+     2022,
+     140,
+     (SELECT COUNTRY_ID FROM COUNTRY WHERE NAME = 'New Zealand'),
+     (SELECT LANG_ID FROM LANGUAGE WHERE NAME = 'English'),
+     'PG-13');
 
 INSERT INTO
-    MOVIES (title, director_id, genre, year, duration, country_id, language_id, rating)
+    MOVIE (title, director_id, genre, year, duration, country_id, language_id, rating)
 VALUES
-    ('The Dream Weaver', 30, 'Drama', 2024, 120, 4, 11, 'PG');
+    ('The Dream Weaver',
+     14,
+     'Drama',
+     2024,
+     120,
+     (SELECT COUNTRY_ID FROM COUNTRY WHERE NAME = 'Mexico'),
+     (SELECT LANG_ID FROM LANGUAGE WHERE NAME = 'Spanish'),
+     'PG');
+COMMIT;
+
+UPDATE SPRINGBOOT01_MATRIX.MOVIE
+SET
+    SYNOPSIS = 'En un mundo donde el silencio habla más fuerte que las palabras, "El Eco Silencioso" narra la historia de un joven protagonista que descubre verdades ocultas en una ciudad moderna, desafiando las normas sociales.'
+WHERE MOVIE_ID = 1;
+
+UPDATE SPRINGBOOT01_MATRIX.MOVIE
+SET
+    SYNOPSIS = 'A través de territorios inexplorados, "Horizontes Perdidos" sigue a un grupo de exploradores que se topan con secretos antiguos que podrían cambiar el destino de la humanidad.'
+WHERE MOVIE_ID = 2;
+
+UPDATE SPRINGBOOT01_MATRIX.MOVIE
+SET
+    SYNOPSIS = 'Un relato escalofriante de suspenso, "Susurros de la Noche" explora los oscuros callejones de una ciudad donde cada esquina esconde un nuevo secreto, y no todos son de fiar.'
+WHERE MOVIE_ID = 3;
+
+UPDATE SPRINGBOOT01_MATRIX.MOVIE
+SET
+    SYNOPSIS = 'Ambientada en el marco de una época pasada, "Ecos del Pasado" revela una historia de amor oculta entrelazada con intrigas políticas que moldearon el curso de la historia.'
+WHERE MOVIE_ID = 4;
+
+UPDATE SPRINGBOOT01_MATRIX.MOVIE
+SET
+    SYNOPSIS = 'En el año 2023, los avances científicos llevan a consecuencias inesperadas en "Salto Cuántico", donde el tiempo y la realidad se confunden, haciendo de la supervivencia el reto supremo.'
+WHERE MOVIE_ID = 5;
+
+UPDATE SPRINGBOOT01_MATRIX.MOVIE
+SET
+    SYNOPSIS = 'Bajo la superficie de un pueblo tranquilo se esconde un oscuro secreto, y en "Secretos del Inframundo", males antiguos resurgen, amenazando con consumirlo todo a su paso.'
+WHERE MOVIE_ID = 6;
+
+UPDATE SPRINGBOOT01_MATRIX.MOVIE
+SET
+    SYNOPSIS = 'En medio de calles bulliciosas, "Luces de Ciudad" despliega un conmovedor romance donde dos almas se encuentran contra todo pronóstico, demostrando que el amor brilla con más intensidad en los tiempos más oscuros.'
+WHERE MOVIE_ID = 7;
+
+UPDATE SPRINGBOOT01_MATRIX.MOVIE
+SET
+    SYNOPSIS = 'Una misión de alto riesgo en "El Agente Secreto" toma giros inesperados mientras las alianzas se ponen a prueba y la línea entre amigo y enemigo se vuelve peligrosamente delgada.'
+WHERE MOVIE_ID = 8;
+
+UPDATE SPRINGBOOT01_MATRIX.MOVIE
+SET
+    SYNOPSIS = 'En un reino donde los sueños son reales, "Sueños de Luz de Estrellas" lleva a los espectadores en un viaje mágico donde una joven ordinaria descubre su destino extraordinario.'
+WHERE MOVIE_ID = 9;
+
+UPDATE SPRINGBOOT01_MATRIX.MOVIE
+SET
+    SYNOPSIS = 'El Lejano Oeste se reinventa en "La Última Frontera", una historia de supervivencia, lealtad y el espíritu indomable de los pioneros que desafían los elementos más duros para construir una nueva vida.'
+WHERE MOVIE_ID = 10;
+
+UPDATE SPRINGBOOT01_MATRIX.MOVIE
+SET
+    SYNOPSIS = 'En un mundo que nunca duerme, "Sol de Medianoche" mezcla humor y romance mientras una joven pareja navega por las complejidades del amor y la vida bajo las brillantes luces de la ciudad.'
+WHERE MOVIE_ID = 11;
+
+UPDATE SPRINGBOOT01_MATRIX.MOVIE
+SET
+    SYNOPSIS = 'Descubriendo una serie de misterios enterrados hace mucho tiempo, "Verdades Ocultas" sigue a una detective decidida cuya búsqueda de la verdad lleva a revelaciones inesperadas sobre su propio pasado.'
+WHERE MOVIE_ID = 12;
+
+UPDATE SPRINGBOOT01_MATRIX.MOVIE
+SET
+    SYNOPSIS = 'En un futuro cercano, "Odisea Celestial" narra la lucha épica de la humanidad para sobrevivir y prosperar en el vasto y desconocido universo, desafiando los límites de la ciencia y la imaginación.'
+WHERE MOVIE_ID = 13;
+
+UPDATE SPRINGBOOT01_MATRIX.MOVIE
+SET
+    SYNOPSIS = 'En "El Tejedor de Sueños", un joven visionario descubre el poder de influir en los sueños de otros, desatando un torbellino de emociones y revelaciones en un mundo que necesita esperanza.'
+WHERE MOVIE_ID = 14;
 COMMIT;
