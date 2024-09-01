@@ -443,72 +443,72 @@ VALUES
      'PG');
 COMMIT;
 
-UPDATE SPRINGBOOT01_MATRIX.MOVIE
+UPDATE MOVIE
 SET
     SYNOPSIS = 'En un mundo donde el silencio habla más fuerte que las palabras, "El Eco Silencioso" narra la historia de un joven protagonista que descubre verdades ocultas en una ciudad moderna, desafiando las normas sociales.'
 WHERE MOVIE_ID = 1;
 
-UPDATE SPRINGBOOT01_MATRIX.MOVIE
+UPDATE MOVIE
 SET
     SYNOPSIS = 'A través de territorios inexplorados, "Horizontes Perdidos" sigue a un grupo de exploradores que se topan con secretos antiguos que podrían cambiar el destino de la humanidad.'
 WHERE MOVIE_ID = 2;
 
-UPDATE SPRINGBOOT01_MATRIX.MOVIE
+UPDATE MOVIE
 SET
     SYNOPSIS = 'Un relato escalofriante de suspenso, "Susurros de la Noche" explora los oscuros callejones de una ciudad donde cada esquina esconde un nuevo secreto, y no todos son de fiar.'
 WHERE MOVIE_ID = 3;
 
-UPDATE SPRINGBOOT01_MATRIX.MOVIE
+UPDATE MOVIE
 SET
     SYNOPSIS = 'Ambientada en el marco de una época pasada, "Ecos del Pasado" revela una historia de amor oculta entrelazada con intrigas políticas que moldearon el curso de la historia.'
 WHERE MOVIE_ID = 4;
 
-UPDATE SPRINGBOOT01_MATRIX.MOVIE
+UPDATE MOVIE
 SET
     SYNOPSIS = 'En el año 2023, los avances científicos llevan a consecuencias inesperadas en "Salto Cuántico", donde el tiempo y la realidad se confunden, haciendo de la supervivencia el reto supremo.'
 WHERE MOVIE_ID = 5;
 
-UPDATE SPRINGBOOT01_MATRIX.MOVIE
+UPDATE MOVIE
 SET
     SYNOPSIS = 'Bajo la superficie de un pueblo tranquilo se esconde un oscuro secreto, y en "Secretos del Inframundo", males antiguos resurgen, amenazando con consumirlo todo a su paso.'
 WHERE MOVIE_ID = 6;
 
-UPDATE SPRINGBOOT01_MATRIX.MOVIE
+UPDATE MOVIE
 SET
     SYNOPSIS = 'En medio de calles bulliciosas, "Luces de Ciudad" despliega un conmovedor romance donde dos almas se encuentran contra todo pronóstico, demostrando que el amor brilla con más intensidad en los tiempos más oscuros.'
 WHERE MOVIE_ID = 7;
 
-UPDATE SPRINGBOOT01_MATRIX.MOVIE
+UPDATE MOVIE
 SET
     SYNOPSIS = 'Una misión de alto riesgo en "El Agente Secreto" toma giros inesperados mientras las alianzas se ponen a prueba y la línea entre amigo y enemigo se vuelve peligrosamente delgada.'
 WHERE MOVIE_ID = 8;
 
-UPDATE SPRINGBOOT01_MATRIX.MOVIE
+UPDATE MOVIE
 SET
     SYNOPSIS = 'En un reino donde los sueños son reales, "Sueños de Luz de Estrellas" lleva a los espectadores en un viaje mágico donde una joven ordinaria descubre su destino extraordinario.'
 WHERE MOVIE_ID = 9;
 
-UPDATE SPRINGBOOT01_MATRIX.MOVIE
+UPDATE MOVIE
 SET
     SYNOPSIS = 'El Lejano Oeste se reinventa en "La Última Frontera", una historia de supervivencia, lealtad y el espíritu indomable de los pioneros que desafían los elementos más duros para construir una nueva vida.'
 WHERE MOVIE_ID = 10;
 
-UPDATE SPRINGBOOT01_MATRIX.MOVIE
+UPDATE MOVIE
 SET
     SYNOPSIS = 'En un mundo que nunca duerme, "Sol de Medianoche" mezcla humor y romance mientras una joven pareja navega por las complejidades del amor y la vida bajo las brillantes luces de la ciudad.'
 WHERE MOVIE_ID = 11;
 
-UPDATE SPRINGBOOT01_MATRIX.MOVIE
+UPDATE MOVIE
 SET
     SYNOPSIS = 'Descubriendo una serie de misterios enterrados hace mucho tiempo, "Verdades Ocultas" sigue a una detective decidida cuya búsqueda de la verdad lleva a revelaciones inesperadas sobre su propio pasado.'
 WHERE MOVIE_ID = 12;
 
-UPDATE SPRINGBOOT01_MATRIX.MOVIE
+UPDATE MOVIE
 SET
     SYNOPSIS = 'En un futuro cercano, "Odisea Celestial" narra la lucha épica de la humanidad para sobrevivir y prosperar en el vasto y desconocido universo, desafiando los límites de la ciencia y la imaginación.'
 WHERE MOVIE_ID = 13;
 
-UPDATE SPRINGBOOT01_MATRIX.MOVIE
+UPDATE MOVIE
 SET
     SYNOPSIS = 'En "El Tejedor de Sueños", un joven visionario descubre el poder de influir en los sueños de otros, desatando un torbellino de emociones y revelaciones en un mundo que necesita esperanza.'
 WHERE MOVIE_ID = 14;
