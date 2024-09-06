@@ -2,13 +2,15 @@ package com.matrix.duoc_springboot_01.infrastructure.database.repositories.entit
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "Director")
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class DirectorEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

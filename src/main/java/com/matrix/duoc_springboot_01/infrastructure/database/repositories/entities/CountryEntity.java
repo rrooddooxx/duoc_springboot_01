@@ -1,13 +1,15 @@
 package com.matrix.duoc_springboot_01.infrastructure.database.repositories.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "Country")
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class CountryEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
