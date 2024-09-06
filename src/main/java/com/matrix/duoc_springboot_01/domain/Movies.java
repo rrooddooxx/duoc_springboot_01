@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Movies {
-  @JsonProperty("movieId")
+  @JsonProperty("movie_id")
   @Getter
   Long movieId;
 
@@ -31,10 +31,10 @@ public class Movies {
   private int duration;
 
   @JsonProperty("country")
-  private String country;
+  private Country country;
 
   @JsonProperty("language")
-  private String language;
+  private Language language;
 
   @JsonProperty("rating")
   private String rating;

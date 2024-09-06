@@ -13,6 +13,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MoviesDirector {
 
+  @JsonProperty("id")
+  Long directorId;
+
   @JsonProperty("first_name")
   String firstName;
 
@@ -20,7 +23,7 @@ public class MoviesDirector {
   String lastName;
 
   @JsonProperty("country")
-  String country;
+  Country country;
 
   @JsonProperty("birth_date")
   LocalDate birthDate;
