@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +22,7 @@ public class MoviesController {
   private final MoviesServiceImpl moviesService;
 
   @GetMapping()
-  public ResponseEntity<List<Movies>> getAllMovies(
+  public ResponseEntity<CollectionModel<EntityModel<Movies>>> getAllMovies(
       @RequestParam(required = false) Optional<String> limit,
       @RequestParam(required = false) Optional<String> offset) {
     List<Movies> serviceResponse =
@@ -32,11 +35,31 @@ public class MoviesController {
       return ResponseEntity.notFound().build();
     }
     log.info("SUCCESS! Got page from paginated movie results");
-    return ResponseEntity.ok(serviceResponse);
+
+    List<EntityModel<Movies>> movieResources =
+        serviceResponse.stream()
+            .map(
+                movie ->
+                    EntityModel.of(
+                        movie,
+                        WebMvcLinkBuilder.linkTo(
+                                WebMvcLinkBuilder.methodOn(this.getClass())
+                                    .getMovieById(movie.getMovieId()))
+                            .withSelfRel()))
+            .toList();
+
+    WebMvcLinkBuilder linkTo =
+        WebMvcLinkBuilder.linkTo(
+            WebMvcLinkBuilder.methodOn(this.getClass())
+                .getAllMovies(Optional.empty(), Optional.empty()));
+
+    CollectionModel<EntityModel<Movies>> resources =
+        CollectionModel.of(movieResources, linkTo.withRel("movies"));
+    return ResponseEntity.ok(resources);
   }
 
   @GetMapping("/{movieId}")
-  public ResponseEntity<Movies> getMovieById(@PathVariable("movieId") Long movieId) {
+  public ResponseEntity<EntityModel<Movies>> getMovieById(@PathVariable("movieId") Long movieId) {
     Optional<Movies> moviesById = moviesService.getMovieById(movieId);
 
     if (moviesById.isEmpty()) {
@@ -45,7 +68,15 @@ public class MoviesController {
     }
 
     log.info("SUCCESS! All movies from data store retrieved");
-    return ResponseEntity.ok(moviesById.get());
+    Movies movie = moviesById.get();
+    EntityModel<Movies> movieResource =
+        EntityModel.of(
+            movie,
+            WebMvcLinkBuilder.linkTo(
+                    WebMvcLinkBuilder.methodOn(this.getClass()).getMovieById(movie.getMovieId()))
+                .withSelfRel());
+
+    return ResponseEntity.ok(movieResource);
   }
 
   @PostMapping()
