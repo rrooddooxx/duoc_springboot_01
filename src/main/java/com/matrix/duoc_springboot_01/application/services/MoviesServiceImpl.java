@@ -75,8 +75,8 @@ public class MoviesServiceImpl implements MoviesService {
 
       return createdMovie.getMovieId();
     } catch (Exception e) {
-      log.error("Cant insert new movie to data store");
-      throw new RuntimeException("Cant insert new movie to data store");
+      log.error(e.getMessage());
+      throw new RuntimeException(e.getCause());
     }
   }
 

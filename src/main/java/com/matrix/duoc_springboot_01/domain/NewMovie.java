@@ -5,8 +5,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Getter
 @Builder
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class NewMovie {
